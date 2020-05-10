@@ -1,0 +1,20 @@
+spring:
+  profiles :
+    active : prod
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://pbd-service-discovery:8761/eureka/
+
+zuul :
+  routes :
+    pbd-ms-user : /user/**
+    pbd-ms-account : /account/**
+    pbd-ms-transaction : /transaction/**
+
+  sensitiveHeaders : Cookie,Set-Cookie
+
+
+
